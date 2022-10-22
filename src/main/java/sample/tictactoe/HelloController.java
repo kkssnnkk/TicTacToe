@@ -50,38 +50,30 @@ public class HelloController {
         return Objects.equals(label1.getText(), symbol) && Objects.equals(label2.getText(), symbol) && Objects.equals(label3.getText(), symbol);
     }
 
-    public void checkDiagonals(String text, String symbol) {
-        if (checkLine(label1, label5, label9, symbol) || checkLine(label3, label5, label7, symbol)) {
-            result.setText(text);
-            access = false;
-            bReset.setVisible(true);
-        }
+    public boolean checkDiagonals(String symbol) {
+        return checkLine(label1, label5, label9, symbol) || checkLine(label3, label5, label7, symbol);
     }
 
-    public void checkVerticals(String text, String symbol) {
-        if (checkLine(label1, label4, label7, symbol) || checkLine(label2, label5, label8, symbol) || checkLine(label3, label6, label9, symbol)) {
-            result.setText(text);
-            access = false;
-            bReset.setVisible(true);
-        }
+    public boolean checkVerticals(String symbol) {
+        return checkLine(label1, label4, label7, symbol) || checkLine(label2, label5, label8, symbol) || checkLine(label3, label6, label9, symbol);
     }
 
-    public void checkHorizontals(String text, String symbol) {
-        if (checkLine(label1, label2, label3, symbol) || checkLine(label4, label5, label6, symbol) || checkLine(label7, label8, label9, symbol)) {
-            result.setText(text);
-            access = false;
-            bReset.setVisible(true);
-        }
+    public boolean checkHorizontals(String symbol) {
+        return checkLine(label1, label2, label3, symbol) || checkLine(label4, label5, label6, symbol) || checkLine(label7, label8, label9, symbol);
     }
 
-    public void checkWin() {
-        checkDiagonals("Player 1 Win", "✕");
-        checkVerticals("Player 1 Win", "✕");
-        checkHorizontals("Player 1 Win", "✕");
+    public String checkWin() {
+        if (checkDiagonals("✕") || checkVerticals("✕") || checkHorizontals("✕"))
+            return "P1";
 
-        checkDiagonals("Player 2 Win", "🞅");
-        checkVerticals("Player 2 Win", "🞅");
-        checkHorizontals("Player 2 Win", "🞅");
+        else if (checkDiagonals("🞅") || checkVerticals("🞅") || checkHorizontals("🞅"))
+            return "P2";
+
+        else return "";
+    }
+
+    public boolean checkDraw() {
+        return false;
     }
 
     public void getTurn(Label label) {
@@ -97,7 +89,24 @@ public class HelloController {
             turn = "P1";
         }
 
-        checkWin();
+        if (Objects.equals(checkWin(), "P1")) {
+            result.setText("Player 1 Win!");
+            access = false;
+            bReset.setVisible(true);
+        }
+        else if (Objects.equals(checkWin(), "P2")) {
+            result.setText("Player 2 Win!");
+            access = false;
+            bReset.setVisible(true);
+        }
+        else if (checkDraw()) {
+            result.setText("Draw");
+            access = false;
+            bReset.setVisible(true);
+        }
+        else {
+
+        }
     }
 
     @FXML
