@@ -10,10 +10,10 @@ import java.util.Objects;
 public class Controller {
 
     @FXML
-    public AnchorPane pane;
+    private AnchorPane pane;
 
     @FXML
-    public Label name;
+    private Label name;
 
     @FXML
     private Button bReplay;
@@ -48,9 +48,9 @@ public class Controller {
     @FXML
     private Label label9;
 
-    String turn = "P1";
+    private String turn = "P1";
 
-    boolean access = true;
+    private boolean access = true;
 
     public boolean checkLine(Label label1, Label label2, Label label3, String symbol) {
         return Objects.equals(label1.getText(), symbol) && Objects.equals(label2.getText(), symbol) && Objects.equals(label3.getText(), symbol);
@@ -118,7 +118,7 @@ public class Controller {
     }
 
     @FXML
-    void onResetButtonClicked() {
+    public void onResetButtonClicked() {
         bReplay.setVisible(false);
         access = true;
         result.setText("");
