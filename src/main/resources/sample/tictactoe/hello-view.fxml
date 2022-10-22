@@ -7,89 +7,110 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.tictactoe.HelloController">
-   <children>
-      <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="14.0" text="TicTacToe" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Separator layoutX="84.0" layoutY="144.0" prefWidth="183.0" />
-      <Separator layoutX="84.0" layoutY="205.0" prefWidth="183.0" />
-      <Separator layoutX="204.0" layoutY="84.0" orientation="VERTICAL" prefHeight="183.0" />
-      <Separator layoutX="143.0" layoutY="84.0" orientation="VERTICAL" prefHeight="183.0" />
-      <Label fx:id="label1" alignment="CENTER" layoutX="84.0" layoutY="84.0" onMouseClicked="#onLabel1Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="label2" alignment="CENTER" layoutX="145.0" layoutY="84.0" onMouseClicked="#onLabel2Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="label3" alignment="CENTER" layoutX="206.0" layoutY="84.0" onMouseClicked="#onLabel3Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="label4" alignment="CENTER" layoutX="84.0" layoutY="145.0" onMouseClicked="#onLabel4Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="label5" alignment="CENTER" layoutX="145.0" layoutY="145.0" onMouseClicked="#onLabel5Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="label6" alignment="CENTER" layoutX="206.0" layoutY="145.0" onMouseClicked="#onLabel6Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="label7" alignment="CENTER" layoutX="84.0" layoutY="206.0" onMouseClicked="#onLabel7Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="label8" alignment="CENTER" layoutX="145.0" layoutY="206.0" onMouseClicked="#onLabel8Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="label9" alignment="CENTER" layoutX="206.0" layoutY="206.0" onMouseClicked="#onLabel9Clicked" prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font></Label>
-      <Label fx:id="result" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="309.0" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="bReset" contentDisplay="CENTER" layoutX="291.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onResetButtonClicked" text="Reset" visible="false">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-   </children>
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="350.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.tictactoe.Controller">
+   <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="14.0" text="TicTacToe"
+          textAlignment="CENTER">
+      <font>
+         <Font name="System Bold" size="18.0"/>
+      </font>
+   </Label>
+   <Separator layoutX="84.0" layoutY="144.0" prefWidth="183.0"/>
+   <Separator layoutX="84.0" layoutY="205.0" prefWidth="183.0"/>
+   <Separator layoutX="204.0" layoutY="84.0" orientation="VERTICAL" prefHeight="183.0"/>
+   <Separator layoutX="143.0" layoutY="84.0" orientation="VERTICAL" prefHeight="183.0"/>
+   <Label fx:id="label1" alignment="CENTER" layoutX="84.0" layoutY="84.0" onMouseClicked="#onLabel1Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="label2" alignment="CENTER" layoutX="145.0" layoutY="84.0" onMouseClicked="#onLabel2Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="label3" alignment="CENTER" layoutX="206.0" layoutY="84.0" onMouseClicked="#onLabel3Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="label4" alignment="CENTER" layoutX="84.0" layoutY="145.0" onMouseClicked="#onLabel4Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="label5" alignment="CENTER" layoutX="145.0" layoutY="145.0" onMouseClicked="#onLabel5Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="label6" alignment="CENTER" layoutX="206.0" layoutY="145.0" onMouseClicked="#onLabel6Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="label7" alignment="CENTER" layoutX="84.0" layoutY="206.0" onMouseClicked="#onLabel7Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="label8" alignment="CENTER" layoutX="145.0" layoutY="206.0" onMouseClicked="#onLabel8Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="label9" alignment="CENTER" layoutX="206.0" layoutY="206.0" onMouseClicked="#onLabel9Clicked"
+          prefHeight="60.0" prefWidth="60.0" textAlignment="CENTER">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+      <font>
+         <Font name="System Bold" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="result" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="309.0"
+          textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font name="System Bold" size="18.0"/>
+      </font>
+   </Label>
+   <Button fx:id="bReplay" contentDisplay="CENTER" layoutX="284.0" layoutY="310.0" mnemonicParsing="false"
+           onMouseClicked="#onResetButtonClicked" text="Replay" visible="false">
+      <cursor>
+         <Cursor fx:constant="HAND"/>
+      </cursor>
+   </Button>
 </AnchorPane>

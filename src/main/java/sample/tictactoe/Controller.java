@@ -3,18 +3,20 @@ package sample.tictactoe;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.util.Objects;
 
-public class HelloController {
+public class Controller {
 
     @FXML
-    private AnchorPane pane;
+    public AnchorPane pane;
 
     @FXML
-    private Button bReset;
+    public Label name;
+
+    @FXML
+    private Button bReplay;
 
     @FXML
     private Label result;
@@ -86,17 +88,14 @@ public class HelloController {
         if (Objects.equals(checkWin(), "P1")) {
             result.setText("Player 1 Win");
             access = false;
-            bReset.setVisible(true);
         }
         else if (Objects.equals(checkWin(), "P2")) {
             result.setText("Player 2 Win");
             access = false;
-            bReset.setVisible(true);
         }
         else if (checkDraw()) {
             result.setText("Draw");
             access = false;
-            bReset.setVisible(true);
         }
     }
 
@@ -113,12 +112,14 @@ public class HelloController {
             turn = "P1";
         }
 
+        bReplay.setVisible(true);
+
         checkResult();
     }
 
     @FXML
-    void onResetButtonClicked(MouseEvent event) {
-        bReset.setVisible(false);
+    void onResetButtonClicked() {
+        bReplay.setVisible(false);
         access = true;
         result.setText("");
         label1.setText("");
@@ -132,39 +133,39 @@ public class HelloController {
         label9.setText("");
     }
 
-    public void onLabel1Clicked(MouseEvent mouseEvent) {
+    public void onLabel1Clicked() {
         getTurn(label1);
     }
 
-    public void onLabel2Clicked(MouseEvent mouseEvent) {
+    public void onLabel2Clicked() {
         getTurn(label2);
     }
 
-    public void onLabel3Clicked(MouseEvent mouseEvent) {
+    public void onLabel3Clicked() {
         getTurn(label3);
     }
 
-    public void onLabel4Clicked(MouseEvent mouseEvent) {
+    public void onLabel4Clicked() {
         getTurn(label4);
     }
 
-    public void onLabel5Clicked(MouseEvent mouseEvent) {
+    public void onLabel5Clicked() {
         getTurn(label5);
     }
 
-    public void onLabel6Clicked(MouseEvent mouseEvent) {
+    public void onLabel6Clicked() {
         getTurn(label6);
     }
 
-    public void onLabel7Clicked(MouseEvent mouseEvent) {
+    public void onLabel7Clicked() {
         getTurn(label7);
     }
 
-    public void onLabel8Clicked(MouseEvent mouseEvent) {
+    public void onLabel8Clicked() {
         getTurn(label8);
     }
 
-    public void onLabel9Clicked(MouseEvent mouseEvent) {
+    public void onLabel9Clicked() {
         getTurn(label9);
     }
 }
