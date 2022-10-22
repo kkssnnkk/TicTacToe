@@ -4,10 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 import java.util.Objects;
 
 public class HelloController {
+
+    @FXML
+    private AnchorPane pane;
 
     @FXML
     private Button bReset;
@@ -73,7 +77,27 @@ public class HelloController {
     }
 
     public boolean checkDraw() {
-        return false;
+        return !Objects.equals(label1.getText(), "") && !Objects.equals(label2.getText(), "") && !Objects.equals(label3.getText(), "") &&
+               !Objects.equals(label4.getText(), "") && !Objects.equals(label5.getText(), "") && !Objects.equals(label6.getText(), "") &&
+               !Objects.equals(label7.getText(), "") && !Objects.equals(label8.getText(), "") && !Objects.equals(label9.getText(), "");
+    }
+
+    public void checkResult() {
+        if (Objects.equals(checkWin(), "P1")) {
+            result.setText("Player 1 Win");
+            access = false;
+            bReset.setVisible(true);
+        }
+        else if (Objects.equals(checkWin(), "P2")) {
+            result.setText("Player 2 Win");
+            access = false;
+            bReset.setVisible(true);
+        }
+        else if (checkDraw()) {
+            result.setText("Draw");
+            access = false;
+            bReset.setVisible(true);
+        }
     }
 
     public void getTurn(Label label) {
@@ -89,24 +113,7 @@ public class HelloController {
             turn = "P1";
         }
 
-        if (Objects.equals(checkWin(), "P1")) {
-            result.setText("Player 1 Win!");
-            access = false;
-            bReset.setVisible(true);
-        }
-        else if (Objects.equals(checkWin(), "P2")) {
-            result.setText("Player 2 Win!");
-            access = false;
-            bReset.setVisible(true);
-        }
-        else if (checkDraw()) {
-            result.setText("Draw");
-            access = false;
-            bReset.setVisible(true);
-        }
-        else {
-
-        }
+        checkResult();
     }
 
     @FXML
